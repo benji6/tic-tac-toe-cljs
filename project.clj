@@ -72,11 +72,11 @@
 
                    :env {:dev true}
 
-                   :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
-                                              :compiler {:main "tic-tac-toe-cljs.dev"
-                                                         :source-map true}}
-}
-}}
+                   :cljsbuild {:builds {:prod {:source-paths ["src/cljs/tic_tac_toe_cljs"]
+                                               :compiler {:output-to "resourcs/public/js/main.js"
+                                                          :optimizations :advanced
+                                                          :pretty-print false
+                                                          :language-in :ecmascript5}}}}}
 
              :uberjar {:hooks [leiningen.cljsbuild minify-assets.plugin/hooks]
                        :env {:production true}

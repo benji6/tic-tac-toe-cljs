@@ -58,5 +58,5 @@
           :on-click #(on-click row-index column-index)} cell]) row))]) @board-data))]
     [:p @message-data]])
 
-(defn init! []
-  (reagent/render [view] (.getElementById js/document "app")))
+((defn init! []
+  (reagent/render [view] (.getElementById js/document "app"))))
